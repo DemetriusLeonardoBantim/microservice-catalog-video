@@ -22,4 +22,9 @@ class Category
   {
     return $this->name;
   }
+
+  public function activate(): void
+  {
+    $this->isActive = true;
+  }
 }
