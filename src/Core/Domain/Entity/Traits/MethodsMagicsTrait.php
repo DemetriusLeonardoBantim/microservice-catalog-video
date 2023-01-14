@@ -1,10 +1,16 @@
 <?php
 
-namespace Core\Domain\Entiry\Traits\MethodsMagicsTrait;
+namespace Core\Domain\Entity\Traits;
 
-class MethodsMagicsTrait
+use Exception;
+
+trait MethodsMagicsTrait
 {
-  public function __get($name)
+  public function __get($property)
   {
+    if ($this->{$property}) return $this->{$property};
+
+    $className = get_class($this);
+    throw new Exception("Property {$property} not found in $className");
   }
 }
