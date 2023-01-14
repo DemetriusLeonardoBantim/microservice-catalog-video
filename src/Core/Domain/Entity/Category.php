@@ -27,4 +27,8 @@ class Category
   {
     $this->isActive = true;
   }
+  public function disable(): void
+  {
+    $this->isActive = false;
+  }
 }
