@@ -2,7 +2,9 @@
 
 
 use Core\Domain\Entity\Category;
+use Core\Domain\Exception\EntityValidationException;
 use PHPUnit\Framework\TestCase;
+use Throwable;
 
 class CategoryUnitTest extends TestCase
 {
