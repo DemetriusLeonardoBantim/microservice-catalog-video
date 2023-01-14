@@ -11,4 +11,9 @@ class Category
     protected bool $isActive = true,
   ) {
   }
+
+  public function name()
+  {
+    return $this->name;
+  }
 }
