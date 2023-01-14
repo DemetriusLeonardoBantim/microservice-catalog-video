@@ -1,15 +1,15 @@
 <?php
 
-namespace Tests\Unit\Domain\Entity\CategoryUnitTest;
 
+use Core\Domain\Entity\Category;
 use PHPUnit\Framework\TestCase;
-
 
 class CategoryUnitTest extends TestCase
 {
   public function testAttributes()
   {
     $category = new Category(
+      id: 'asdf',
       name: 'New Cat',
       description: 'New desc',
       isActive: true
@@ -17,6 +17,6 @@ class CategoryUnitTest extends TestCase
 
     $this->assertEquals('New Cat', $category->name);
     $this->assertEquals('New desc', $category->description);
-    $this->assertEquals('true', $category->isActive);
+    $this->assertEquals(true, $category->isActive);
   }
 }
