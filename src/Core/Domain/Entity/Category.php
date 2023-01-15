@@ -12,7 +12,7 @@ class Category
   use MethodsMagicsTrait;
 
   public function __construct(
-    protected Uuid $id,
+    protected Uuid|string $id,
     protected string $name = '',
     protected string $description = '',
     protected bool $isActive = true,
