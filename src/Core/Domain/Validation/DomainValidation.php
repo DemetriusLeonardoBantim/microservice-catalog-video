@@ -27,4 +27,11 @@ class DomainValidation
       throw new EntityValidationException($exceptMessage ?? 'The value must not be smaller than {$length} characters');
     }
   }
+
+  public static function StrCanNullAndMaxLength(string $value, int $length = 2, string $exceptMessage = null)
+  {
+    if (empty($value) && strlen($value) > $length) {
+      throw new EntityValidationException($exceptMessage ?? 'The value must not be greater than {$length} characters');
+    }
+  }
 }
