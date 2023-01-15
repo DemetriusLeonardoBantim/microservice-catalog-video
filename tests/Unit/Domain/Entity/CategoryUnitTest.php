@@ -4,6 +4,7 @@
 use Core\Domain\Entity\Category;
 use Core\Domain\Exception\EntityValidationException;
 use PHPUnit\Framework\TestCase;
+use Ramsey\Uuid\Uuid;
 use Throwable;
 
 class CategoryUnitTest extends TestCase
@@ -48,7 +49,7 @@ class CategoryUnitTest extends TestCase
 
   public function testUpdate()
   {
-    $uuid = 'uuid.value';
+    $uuid = (string) Uuid::uuid4()->toString();
 
     $category = new Category(
       id: $uuid,
