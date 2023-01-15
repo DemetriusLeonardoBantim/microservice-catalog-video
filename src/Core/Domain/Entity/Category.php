@@ -17,6 +17,9 @@ class Category
     protected string $description = '',
     protected bool $isActive = true,
   ) {
+    $this->id = $this->id ? new Uuid($this->id) : Uuid::random();
+
+    $this->validate();
   }
 
   public function name()
