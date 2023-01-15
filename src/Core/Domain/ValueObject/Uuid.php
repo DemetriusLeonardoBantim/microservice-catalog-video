@@ -18,6 +18,11 @@ class Uuid
     return new  self(RamseyUuid::uuid4()->toString());
   }
 
+  public function __toString(): string
+  {
+    return $this->value;
+  }
+
   private function ensureIsValid(string $id)
   {
     if (!RamseyUuid::isValid($id)) {
