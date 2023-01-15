@@ -31,7 +31,7 @@ class DomainValidationUnitTest extends TestCase
     }
   }
 
-  public function testStrMAxLength()
+  public function testStrMaxLength()
   {
     try {
       $value = 'Teste';
