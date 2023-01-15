@@ -33,7 +33,7 @@ class Category
     $this->isActive = false;
   }
 
-  public function update(string $name, string $description = ''): void
+  public function update(string $name, string $description = '')
   {
     $this->name = $name;
     $this->description = $description;
