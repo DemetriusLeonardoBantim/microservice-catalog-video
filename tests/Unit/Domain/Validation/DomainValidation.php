@@ -19,4 +19,15 @@ class DomainValidationUnitTest extends TestCase
       $this->assertInstanceOf(EntityValidationException::class, $th);
     }
   }
+
+  public function testNotNullCustomMessageException()
+  {
+    try {
+      $value = '';
+      DomainValidation::notNull($value, 'custom message error');
+      $this->assertTrue(false);
+    } catch (Throwable $th) {
+      $this->assertInstanceOf(EntityValidationException::class, $th, 'custom message error');
+    }
+  }
 }
