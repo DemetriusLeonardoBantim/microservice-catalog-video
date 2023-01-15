@@ -5,13 +5,14 @@ namespace Core\Domain\Entity;
 use Core\Domain\Entity\Traits\MethodsMagicsTrait;
 use Core\Domain\Exception\EntityValidationException;
 use Core\Domain\Validation\DomainValidation;
+use Core\Domain\ValueObject\Uuid;
 
 class Category
 {
   use MethodsMagicsTrait;
 
   public function __construct(
-    protected string $id = '',
+    protected Uuid $id,
     protected string $name = '',
     protected string $description = '',
     protected bool $isActive = true,
