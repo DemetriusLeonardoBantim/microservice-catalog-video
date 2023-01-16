@@ -11,11 +11,9 @@ class CreateUseCaseCategoryUnitTest extends TestCase
 {
   public function testCreateNewCategory()
   {
-    $categoryId = '1';
     $categoryName = 'name cat';
 
     $mockEntity = Mockery::mock(Category::class, [
-      $categoryId,
       $categoryName
     ]);
     $mockRepo = Mockery::mock(stdClass::class, CreateCategoryUseCase::class);
