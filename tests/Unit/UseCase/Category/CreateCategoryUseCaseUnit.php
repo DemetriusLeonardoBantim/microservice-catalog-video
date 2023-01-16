@@ -22,5 +22,6 @@ class CreateUseCaseCategoryUnitTest extends TestCase
     $mockRepo->shouldReceive('insert')->andReturn();
     $useCase = new CreateCategoryUseCase($this->$mockRepo);
     $useCase->execute();
+    Mockery::close();
   }
 }
