@@ -10,4 +10,5 @@ interface CategoryRepositoryInterface
   public function findById(string $id): Category;
   public function findAll(string $filter = '', $order = 'DESC'): array;
   public function paginate(string $filter = '', $order = 'DESC', int $page, int $totalPage = 15): array;
+  public function update(Category $category): Category;
 }
