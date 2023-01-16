@@ -26,12 +26,12 @@ class CreateCategoryUseCase
     );
 
     $newCategory = $this->repository->insert($category);
-    
+
     return new CategoryCreateOutputDTO(
       id: $newCategory->id(),
       name: $newCategory->name,
       description: $newCategory->description,
       is_active: $category->isActive
-    )
+    );
   }
 }
