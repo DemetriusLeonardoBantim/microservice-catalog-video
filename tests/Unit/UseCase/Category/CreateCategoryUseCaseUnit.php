@@ -12,6 +12,7 @@ use Mockery;
 
 class CreateUseCaseCategoryUnitTest extends TestCase
 {
+
   public function testCreateNewCategory()
   {
     $uuid = (string) Uuid::uuid4()->toString();
