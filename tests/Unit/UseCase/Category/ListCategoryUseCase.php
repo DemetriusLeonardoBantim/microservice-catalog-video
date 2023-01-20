@@ -17,11 +17,19 @@ class ListCategoryUseCaseUnitTests extends TestCase
   public function testGetById()
   {
     $uuid = (string) Uuid::uuid4()->toString();
-    $categoryName = 'name cat';
 
-    $mockEntity = Mockery::mock(CategoryEntity::class, [
+    $this->$mockEntity = Mockery::mock(CategoryEntity::class, [
       $uuid,
       'teste category'
     ]);
+    $this->mockRepo = Mockery::mock(stdClass::class, CategoryRepositoryInterface::class);
+    $this->mockRepo->shouldReceive('findById')->with($uuid)->andReturn($this->mockEntity);
+
+    $this->mockInputDto = Mockery::mock(CategoryCreateInputDTO::class, [
+      $uuid,
+    ]);
+
+    $useCase = new ListCategoryUseCase($this->mockRepo);
+    $useCase->execute($this->mockInputDto);
   }
 }
