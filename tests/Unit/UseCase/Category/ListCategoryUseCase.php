@@ -30,6 +30,10 @@ class ListCategoryUseCaseUnitTests extends TestCase
     ]);
 
     $useCase = new ListCategoryUseCase($this->mockRepo);
-    $useCase->execute($this->mockInputDto);
+    $response = $useCase->execute($this->mockInputDTO);
+
+    $this->assertInstanceOf(CategoryOutupDto::class, $response);
+    $this->assertEquals('test category', $response->name);
+    $this->assertEquals($uuid, $response->id);
   }
 }
