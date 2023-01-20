@@ -25,7 +25,7 @@ class ListCategoryUseCase
       id: $category->id(),
       name: $category->name,
       description: $category->description,
-      is_active: $category->isActive,
+      is_active: $category->is_active,
     );
   }
 }
