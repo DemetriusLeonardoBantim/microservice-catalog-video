@@ -40,4 +40,10 @@ class ListCategoryUseCaseUnitTests extends TestCase
     $this->assertEquals('test category', $response->name);
     $this->assertEquals($uuid, $response->id);
   }
+
+  protected function tearDown(): void
+  {
+    Mockery::close();
+    parent::tearDown();
+  }
 }
